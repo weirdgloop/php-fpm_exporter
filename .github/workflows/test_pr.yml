@@ -11,7 +11,7 @@ jobs:
     steps:
 
     - name: Set up Go
-      uses: actions/setup-go@v4.1.0
+      uses: actions/setup-go@v5.5.0
       with:
         go-version: 1.17
       id: go
@@ -22,7 +22,7 @@ jobs:
         fetch-depth: 0
 
     - name: golangci-lint
-      uses: golangci/golangci-lint-action@v6.0.1
+      uses: golangci/golangci-lint-action@v6.5.0
       with:
         version: v1.44
 
@@ -32,7 +32,7 @@ jobs:
     steps:
 
     - name: Setup Go
-      uses: actions/setup-go@v4.1.0
+      uses: actions/setup-go@v5.5.0
       with:
         go-version: 1.17
       id: go
@@ -62,7 +62,7 @@ jobs:
         ref: "refs/pull/${{ github.event.number }}/merge"
 
     - name: Setup Go
-      uses: actions/setup-go@v4.1.0
+      uses: actions/setup-go@v5.5.0
       with:
         go-version: 1.17
       id: go
@@ -76,7 +76,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Scan image
-      uses: anchore/scan-action@v3.6.4
+      uses: anchore/scan-action@v6.3.0
       id: scan
       with:
         image: "hipages/php-fpm_exporter:latest"
